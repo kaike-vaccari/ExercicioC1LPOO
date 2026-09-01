@@ -42,7 +42,7 @@ public class Main {
 				removerMaiores();
 				break;
 			case 3:
-				//contarValor();
+				contarValor();
 				break;
 			case 4:
 				//intercalarListas();
@@ -62,6 +62,41 @@ public class Main {
 	} // FIM MAIN
 	
 	//--------------------------------------------------------------
+	
+	//CONTAR VALOR	 //ITEM 2
+	private static void contarValor() {
+		ArrayList<Integer> lista = new ArrayList<>();
+		
+		System.out.println("Informe a quantidade de elementos da lista:");
+		int num  = scan.nextInt();
+		lista = preencher(num);
+		System.out.println("valores incluidos na lista: " + lista);
+		
+		
+		System.out.println("Informe um valor para contar quantas vezes aparece: ");
+		num  = scan.nextInt();
+		
+		int quant = contarValor(lista,num);
+		
+		System.out.println("O valor " + num + " aparece na lista: " + quant + " vezes.");
+	}
+	
+	
+	
+	
+
+	private static int contarValor(ArrayList<Integer> lista, int num) {
+		int quant = 0;
+		for (int i=0; i < lista.size();i++) {
+				if(lista.get(i)== num) {
+					quant++;
+				}
+			}
+			return quant;
+	}
+	
+	
+	
 	
 	//REMOVER MAIORES //Item 2
 		private static void removerMaiores() {
