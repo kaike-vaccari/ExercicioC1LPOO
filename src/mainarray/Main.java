@@ -45,7 +45,7 @@ public class Main {
 				contarValor();
 				break;
 			case 4:
-				//intercalarListas();
+				intercalarListas();
 				break;
 			case 5:
 				System.out.println("Saindo do sistema...");
@@ -63,7 +63,61 @@ public class Main {
 	
 	//--------------------------------------------------------------
 	
-	//CONTAR VALOR	 //ITEM 2
+	//CONTAR VALOR	 //ITEM 4
+	
+		private static void intercalarListas() {
+			ArrayList<Integer> lista = new ArrayList<>();
+			ArrayList<Integer> lista2 = new ArrayList<>();
+			ArrayList<Integer> lista3 = new ArrayList<>();
+			
+			System.out.println("Informe a quantidade de elementos da lista 1:");
+			int num  = scan.nextInt();
+			lista = preencher(num);
+			System.out.println("valores incluidos na lista: " + lista);
+			
+			
+			System.out.println("Informe a quantidade de elementos da lista 2:");
+			num  = scan.nextInt();
+			lista2 = preencher(num);
+			System.out.println("valores incluidos na lista: " + lista2);
+			
+			lista3 = intercalarListas(lista,lista2);
+			
+			System.out.println("lista unificada e intercalada:" + lista3);
+			
+		}
+
+
+
+
+		private static ArrayList<Integer> intercalarListas(ArrayList<Integer> lista, ArrayList<Integer> lista2) {
+			ArrayList<Integer> listaNova = new ArrayList<>();
+			int tamanho1 = lista.size();
+			int tamanho2 = lista2.size();
+			
+			
+			if (tamanho1 > tamanho2) { // verifica qual é a maior lista (se é a primeira)
+				for(int i = 0; i < tamanho1 ; i++) { //usa a maior lista como parametro do for
+					listaNova.add(lista.get(i)); // adiciona o elemento da lista 1 na lista 3
+					if (i < tamanho2) { // enquanto o tamanho da lista1 do for não passar o tamanho do 2, entra no if
+						listaNova.add(lista2.get(i)); // adiciona o item da lista2 na lista3
+					}
+				}
+			}
+			else { // quando a lista 2 for maior
+				for(int i = 0;i<tamanho2;i++) { //usa a maior lista como parametro do for
+					if (i < tamanho1) { // enquanto o tamanho da lista1 do for não passar o tamanho do 2 entra no if
+						listaNova.add(lista.get(i)); // adiciona o elemento da lista 1 na lista 3
+					}
+					listaNova.add(lista2.get(i)); // adiciona o item da lista2 na lista3
+				} //obs o IF é invertido para manter a ordem da lista.
+			}
+
+			return listaNova;
+		}
+	
+	
+	//CONTAR VALOR	 //ITEM 3
 	private static void contarValor() {
 		ArrayList<Integer> lista = new ArrayList<>();
 		
