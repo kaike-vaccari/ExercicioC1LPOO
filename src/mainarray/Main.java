@@ -39,7 +39,7 @@ public class Main {
 				removerRepetidos();
 				break;
 			case 2:
-				//removerMaiores();
+				removerMaiores();
 				break;
 			case 3:
 				//contarValor();
@@ -63,13 +63,52 @@ public class Main {
 	
 	//--------------------------------------------------------------
 	
+	//REMOVER MAIORES //Item 2
+		private static void removerMaiores() {
+			ArrayList<Integer> lista = new ArrayList<>();
+			
+			
+			System.out.println("Informe a quantidade de elementos da lista:");
+			int num  = scan.nextInt();
+			
+			lista = preencher(num);
+			System.out.println("valores incluidos na lista: " + lista);
+			
+			System.out.println("Informe um valor para remover da lista os maiores que ele: ");
+			num  = scan.nextInt();
+			
+			while(valorMaiorExiste(lista,num)) { // pesquisa se existe valor maior.
+				int pos = buscaPos(lista,num); // busca a posição do valor maior.
+				lista.remove(pos); // remove o valor encontrado.
+			}
+			System.out.println("valores da lista menores que: " + num + " : " + lista); // exibe a lista novamente removendo os maiores que o num.
+		}
+
+		private static int buscaPos(ArrayList<Integer> lista, int num) {
+			for (int i = 0; i < lista.size();i++) { // procura o valor maior e retorna a posição
+				if (lista.get(i) > num) {
+					return i;
+				}
+			}
+			return 0;
+		}
+
+		private static boolean valorMaiorExiste(ArrayList<Integer> lista, int num) {
+			for (int i=0; i < lista.size();i++) {
+				if(lista.get(i) > num) {
+					return true;
+				}
+			}
+			return false;
+		}
 	
 	
+	//REMOVER REPETIDOS //Item 1
 	private static void removerRepetidos() {
 		ArrayList<Integer> lista1 = new ArrayList<>();
 		ArrayList<Integer> lista2 = new ArrayList<>();
 		
-		//Item 1
+		
 		System.out.println("Bem vindo, informe a quantidade de elementos da lista 1:");
 		int num  = scan.nextInt();
 				
