@@ -20,6 +20,52 @@ public class Main {
 		//Scanner scan = new Scanner(System.in); TROCADO DE LUGAR
 		
 		
+	
+		int opcao;
+		
+		do {
+			System.out.println(
+					"Bem vindo ao nosso sitema. Selecione uma das opções abaixo:\n"+
+							"1 - Remover valores repetidos\n"+
+							"2 - Remover valores maires\n"+
+							"3 - Contar ocorrência de um valor\n"+
+							"4 - Intercalar duas listas\n"+
+							"5 - Sair"
+					);
+			opcao = scan.nextInt();
+			
+			switch (opcao) {
+			case 1:
+				removerRepetidos();
+				break;
+			case 2:
+				//removerMaiores();
+				break;
+			case 3:
+				//contarValor();
+				break;
+			case 4:
+				//intercalarListas();
+				break;
+			case 5:
+				System.out.println("Saindo do sistema...");
+				System.exit(0);
+				break;
+			default:
+				System.out.println("Opção inválida! Digite novamente");
+				break;
+			}
+			
+		}while(opcao != 5);
+		
+		
+	} // FIM MAIN
+	
+	//--------------------------------------------------------------
+	
+	
+	
+	private static void removerRepetidos() {
 		ArrayList<Integer> lista1 = new ArrayList<>();
 		ArrayList<Integer> lista2 = new ArrayList<>();
 		
@@ -34,48 +80,8 @@ public class Main {
 		System.out.println("valores da lista sem repetição: " + lista2);
 		//FIM ITEM 1
 		
-		
-		int opcao;
-		
-		do {
-			System.out.println(
-					"Bem vindo ao nosso sitema. Selecione uma das opções abaixo:\n"+
-							"1 - Remover valores repetidos\n"+
-							"2 - Remover valores maires\n"+
-							"3 - Contar ocorrência de um valor\n"+
-							"4 - Intercalar duas listas\n"+
-							"5 - Sair"
-					);
-			opcao = scan.nextInt();
-		}while(opcao != 5);
-		
-		switch (opcao) {
-		case 1:
-			//removerRepetidos();
-			break;
-		case 2:
-			//removerMaiores();
-			break;
-		case 3:
-			//contarValor();
-			break;
-		case 4:
-			//intercalarListas();
-			break;
-		case 5:
-			System.out.println("Saindo do sistema...");
-			System.exit(0);
-			break;
-		default:
-			System.out.println("Opção inválida! Digite novamente");
-			break;
-		}
-	} // FIM MAIN
-	
-	//--------------------------------------------------------------
-	
-	
-	
+	}
+
 	private static ArrayList<Integer> novaListaSemRepetido(ArrayList<Integer> lista1) {
 		ArrayList<Integer> novaLista = new ArrayList<>();
 		
